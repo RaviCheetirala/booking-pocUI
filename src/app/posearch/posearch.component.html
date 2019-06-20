@@ -1,0 +1,49 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card-body">
+          <form>
+              <div class="row">
+                  <div class="col-md-2">
+                  <mat-form-field>
+                    <input matInput [(ngModel)]="poNumber" name="poNumber" id="poNumber" placeholder="Search">
+                  </mat-form-field></div>
+                 <div class="col-md-1"> <button mat-raised-button type="submit" class="btn btn-info pull-right" (click)="searchPO()">Search PO</button>
+                 </div></div>
+             <!--  <div class="col-md-4"> <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="searchPO()">Search PO</button></div> -->
+                        <!--   <div class="clearfix"></div> -->
+            </form></div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">PoSearch</h4>
+                       <!--  <p class="card-category"> Here is a subtitle for this table</p> -->
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                  <th>PO Number</th>
+                                  <th>DC Number</th>
+                                  <th>Delivery Date</th>
+                                  <th>Vendor No</th>
+                                  <th>Status</th>
+                                  <th>Delivery Dock</th>
+                                  <th>Delivery Time</th>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let result of resultList">                
+                                   <td>{{result.poNo}}</td> 
+                                                  <td>{{result.dcNo}}</td>
+                                                    <td>{{result.deliveryDate}}</td>
+                                                      <td>{{result.vendorNo}}</td>
+                                                        <td>{{result.status}}</td>
+                                                          <td>{{result.deliveryDock}}</td>
+                                                            <td>{{result.deliveryTime}}</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div></div></div></div>
